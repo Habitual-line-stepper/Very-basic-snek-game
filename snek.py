@@ -26,7 +26,7 @@ snek_speech = ("I still HUNGER!!", "FEED ME MOAR!!", "MY POWER IS GROWING!!")
 
 def player_score(score):
     score_track = score_font.render("Score: " + str(score), True, green)
-    display.blit(score_track, [0, 0])
+    display.blit(score_track, [width / 2, 0])
 
 
 def speak(text):
@@ -43,7 +43,8 @@ def snek_size(snek, snek_list):
 
 def game_text(text, colour):
     text = game_font.render(text, True, colour)
-    display.blit(text, [width / 6, height / 3])
+    text_rect = text.get_rect(center=(width / 2, height / 2))
+    display.blit(text, text_rect)
 
 
 def game_on():
