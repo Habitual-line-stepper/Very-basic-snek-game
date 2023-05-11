@@ -48,6 +48,7 @@ def game_text(text, colour):
 
 
 def game_on():
+    global snek_spood
     try_again = False
     lost = False
     x1 = width / 2
@@ -117,10 +118,12 @@ def game_on():
                 prey_x = round(random.randrange(0, width - snek) / 10.0) * 10.0
                 prey_y = round(random.randrange(0, height - snek) / 10.0) * 10.0
                 snek_length += 1
+                snek_spood += 5
             elif prey_y < y1 + snek < prey_y + snek:
                 prey_x = round(random.randrange(0, width - snek) / 10.0) * 10.0
                 prey_y = round(random.randrange(0, height - snek) / 10.0) * 10.0
                 snek_length += 1
+                snek_spood += 5
 
         timer.tick(snek_spood)
     pygame.quit()
